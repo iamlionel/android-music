@@ -5,10 +5,11 @@ import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.Gravity
-import androidx.appcompat.app.AppCompatActivity
 import com.example.imooc_voice.databinding.ActivityHomeBinding
 import com.example.imooc_voice.model.Channel
 import com.example.imooc_voice.ui.home.adapter.HomePagerAdapter
+import com.example.lib_common_ui.base.BaseActivity
+import com.example.lib_common_ui.ext.binding
 import net.lucode.hackware.magicindicator.ViewPagerHelper
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter
@@ -16,22 +17,21 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerInd
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.SimplePagerTitleView
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     //todo baseActivity
     //todo viewmodel
 
-    private lateinit var binding: ActivityHomeBinding
-
-    private val channels = arrayOf(Channel.MY, Channel.DISCOVERY, Channel.FRIEND)
+    private val binding by binding(ActivityHomeBinding::inflate)
 
     private lateinit var adapter: HomePagerAdapter
 
+    companion object {
+        private val channels = arrayOf(Channel.MY, Channel.DISCOVERY, Channel.FRIEND)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         initView()
     }
 

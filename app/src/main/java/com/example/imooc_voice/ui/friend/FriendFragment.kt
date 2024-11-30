@@ -1,13 +1,10 @@
 package com.example.imooc_voice.ui.friend
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.example.imooc_voice.R
 import com.example.imooc_voice.databinding.FragmentFriendBinding
+import com.example.lib_common_ui.base.BaseFragment
 
-class FriendFragment : Fragment() {
+class FriendFragment : BaseFragment(R.layout.fragment_friend) {
 
     private lateinit var binding: FragmentFriendBinding
 
@@ -15,18 +12,5 @@ class FriendFragment : Fragment() {
         fun newInstance(): FriendFragment {
             return FriendFragment()
         }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentFriendBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
     }
 }

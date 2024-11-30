@@ -1,28 +1,17 @@
 package com.example.imooc_voice.ui.mine
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.example.imooc_voice.R
 import com.example.imooc_voice.databinding.FragmentMineBinding
+import com.example.lib_common_ui.base.BaseFragment
+import com.example.lib_common_ui.ext.binding
 
-class MineFragment : Fragment() {
+class MineFragment : BaseFragment(R.layout.fragment_mine) {
 
-    private lateinit var binding: FragmentMineBinding
+    private val binding by binding(FragmentMineBinding::bind)
 
     companion object {
         fun newInstance(): MineFragment {
             return MineFragment()
         }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentMineBinding.inflate(inflater, container, false)
-        return binding.root
     }
 }

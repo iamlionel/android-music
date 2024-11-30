@@ -1,13 +1,10 @@
 package com.example.imooc_voice.ui.discovery
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.example.imooc_voice.R
 import com.example.imooc_voice.databinding.FragmentDiscoveryBinding
+import com.example.lib_common_ui.base.BaseFragment
 
-class DiscoveryFragment : Fragment() {
+class DiscoveryFragment : BaseFragment(R.layout.fragment_discovery) {
 
     private lateinit var binding: FragmentDiscoveryBinding
 
@@ -15,14 +12,5 @@ class DiscoveryFragment : Fragment() {
         fun newInstance(): DiscoveryFragment {
             return DiscoveryFragment()
         }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentDiscoveryBinding.inflate(inflater,container,false)
-        return binding.root
     }
 }
