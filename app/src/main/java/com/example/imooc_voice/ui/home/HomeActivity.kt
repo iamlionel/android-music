@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.Gravity
+import androidx.activity.viewModels
 import com.example.imooc_voice.databinding.ActivityHomeBinding
 import com.example.imooc_voice.model.Channel
 import com.example.imooc_voice.ui.home.adapter.HomePagerAdapter
@@ -19,12 +20,13 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.Simple
 
 class HomeActivity : BaseActivity() {
 
-    //todo baseActivity
     //todo viewmodel
 
     private val binding by binding(ActivityHomeBinding::inflate)
 
     private lateinit var adapter: HomePagerAdapter
+
+    private val viewModel: HomeViewModel by viewModels()
 
     companion object {
         private val channels = arrayOf(Channel.MY, Channel.DISCOVERY, Channel.FRIEND)

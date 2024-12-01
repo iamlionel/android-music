@@ -41,7 +41,25 @@ dependencies {
     implementation libs.appcompat
     implementation libs.material
     implementation libs.core.ktx
+    implementation libs.converter.gson
+    implementation libs.retrofit2.kotlin.coroutines.adapter
+    implementation libs.coroutine
+    implementation libs.lifecycle.viewmodel
+    implementation libs.activity.ktx
+    implementation libs.fragment.ktx
+    implementation libs.converter.scalars
     implementation project(':lib_common_ui')
+    implementation project(':lib_pullalive')
+    implementation project(':lib_webview')
+    implementation project(':lib_audio')
+    implementation project(':lib_video')
+    implementation project(':lib_update')
+    implementation project(':lib_network')
+    implementation project(':lib_share')
+    implementation project(':lib_qrcode')
+    implementation project(':lib_image_loader')
+
+
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
